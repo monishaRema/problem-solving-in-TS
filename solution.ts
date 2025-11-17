@@ -33,7 +33,7 @@ class Person {
   }
 
   getDetails(): string {
-    return `Name: ${this.name}, Age: ${this.age}`;
+    return `'Name: ${this.name}, Age: ${this.age}'`;
   }
 }
 
@@ -93,15 +93,6 @@ interface Product {
   discount?: number;
 }
 
-/*
-
-    # Product price = quantity * price
-    # discount = ? %  = (price * %) / 100
-    # product price after discount = product price - discount
-
-
-*/
-
 const calculateTotalPrice = (value: Product[]): number => {
   if (value.length === 0) {
     return 0;
@@ -112,13 +103,10 @@ const calculateTotalPrice = (value: Product[]): number => {
     if (item.discount) {
       discount = (totalPrice * item.discount) / 100;
     }
-    totalPrice = totalPrice - discount;
+    let priceAfterDiscount = totalPrice - discount;
 
-    return subtotal + totalPrice;
+    return subtotal + priceAfterDiscount;
   }, 0);
 
   return result;
 };
-
-
-
