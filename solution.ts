@@ -110,3 +110,6 @@ const calculateTotalPrice = (value: Product[]): number => {
 
   return result;
 };
+
+
+
